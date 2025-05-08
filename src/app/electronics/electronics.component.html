@@ -1,0 +1,69 @@
+
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="logo">E-Commerce Website</div>
+    <ul class="nav-links">
+      <li><a [routerLink]="['/home']">Home</a></li>
+      <li><a [routerLink]="['/orders']">My Orders</a></li>
+      <li><a [routerLink]="['/account']">Account</a></li>
+      <li><a [routerLink]="['/sell']">Sell On Website</a></li>
+      <li><a [routerLink]="['/contact-us']">Contact Us</a></li>
+      <li><a [routerLink]="['/aboutus']">About Us</a></li>
+      <!-- <li><a [routerLink]="['/happy']">Happy Clients</a></li> -->
+      <li><a [routerLink]="['/card']">🛒</a></li>
+
+    </ul>
+  </nav>
+<body>
+
+  <!-- Product Grid Section -->
+  <div *ngIf="showCategories">
+    <div class="product-grid">
+      <div *ngFor="let product of categories[0].products" class="product">
+        <img [src]="product.image" alt="{{ product.name }}">
+        <h3>{{ product.name }}</h3>
+        <p>₹{{ product.price }}</p>
+        <button (click)="showProductDetails(product)">View Details</button>
+        <button class="add-to-cart-btn" (click)="addToCart(product)">
+          <span class="cart-icon">🛒</span> Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Details Section -->
+  <div *ngIf="selectedProduct" class="product-details">
+    <h2>Product Details</h2>
+    <img [src]="selectedProduct.image" alt="{{ selectedProduct.name }}" class="product-image">
+    <h3>{{ selectedProduct.name }}</h3>
+    <p>Price: ₹{{ selectedProduct.price }}</p>
+
+    <!-- Dynamic Product Details -->
+    <p *ngIf="selectedProduct.details.brand">Brand: {{ selectedProduct.details.brand }}</p>
+    <p *ngIf="selectedProduct.details.weight">Weight: {{ selectedProduct.details.weight }}</p>
+    <p *ngIf="selectedProduct.details.type">Type: {{ selectedProduct.details.type }}</p>
+    <p *ngIf="selectedProduct.details.storage">Storage: {{ selectedProduct.details.storage }}</p>
+    <p *ngIf="selectedProduct.details.color">Color: {{ selectedProduct.details.color }}</p>
+    <p *ngIf="selectedProduct.details.offers">Offers: {{ selectedProduct.details.offers }}</p>
+    <p *ngIf="selectedProduct.details.specifications">Specifications: {{ selectedProduct.details.specifications }}</p>
+    <p *ngIf="selectedProduct.details.features">Features: {{ selectedProduct.details.features }}</p>
+    <p *ngIf="selectedProduct.details.dosage">Dosage: {{ selectedProduct.details.dosage }}</p>
+    <p *ngIf="selectedProduct.details.uses">Uses: {{ selectedProduct.details.uses }}</p>
+    <p *ngIf="selectedProduct.details.sideEffects">Side Effects: {{ selectedProduct.details.sideEffects }}</p>
+
+    <!-- Quantity Selector -->
+    <div class="quantity-container">
+      <label for="quantity">Quantity: </label>
+      <input type="number" id="quantity" [(ngModel)]="quantity" min="1" max="100" />
+    </div>
+
+    <!-- Action Buttons -->
+    <!-- <button (click)="orderProduct(selectedProduct)">Order Now</button> -->
+    
+  </div>
+
+  <!-- Back Button -->
+  <div *ngIf="selectedProduct || selectedCategory" class="back-button-container">
+    <button (click)="goBack()" class="back-btn">Back</button>
+  </div>
+</body>

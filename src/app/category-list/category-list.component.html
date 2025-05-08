@@ -1,0 +1,85 @@
+<body>
+    <!-- Categories Button
+    <div class="categories-button-container">
+      <button (click)="toggleCategories()" class="categories-btn">Categories</button>
+    </div> -->
+    
+    <!-- Categories List -->
+    <div *ngIf="showCategories && !selectedCategory && !selectedProduct" class="category-list">
+      <div 
+        class="category" 
+        *ngFor="let category of categories" 
+        (click)="onCategoryClick(category)"
+        (mouseover)="onCategoryHover(category)" 
+        (mouseleave)="onCategoryLeave()">
+        
+        <h3>{{ category.name }}</h3>
+       
+      </div>
+    </div>
+    
+    <!-- Products List -->
+    <div *ngIf="selectedCategory && !selectedProduct" class="product-list">
+      <h2>{{ selectedCategory.name }} Products</h2>
+      <div class="product-grid">
+        <div *ngFor="let product of selectedCategory.products" class="product">
+          <div class="product-header">
+            <!-- Heart Icon -->
+            <span 
+              class="heart-icon" 
+              [ngClass]="{'liked': product.liked}" 
+              (click)="toggleWishlist(product)"
+              title="Add to Wishlist">
+              ❤️
+            </span>
+          </div>
+          <img [src]="product.image" alt="{{ product.name }}" class="product-image">
+          <h4>{{ product.name }}</h4>
+          <p>Price: ₹{{ product.price }}</p>
+          <button (click)="showProductDetails(product)">View Details</button>
+          <button (click)="addToCart(product)" class="add-to-cart-btn">
+            <span class="cart-icon">🛒</span> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Product Details (This is the section that will show up after clicking 'View Details') -->
+    <div *ngIf="selectedProduct" class="product-details">
+      <h2>Product Details</h2>
+      <img [src]="selectedProduct.image" alt="{{ selectedProduct.name }}" class="product-image">
+      <h3>{{ selectedProduct.name }}</h3>
+      <p>Price: ₹{{ selectedProduct.price }}</p>
+    
+      <!-- Displaying various product details dynamically -->
+      <p *ngIf="selectedProduct.details.brand">Brand: {{ selectedProduct.details.brand }}</p>
+      <p *ngIf="selectedProduct.details.weight">Weight: {{ selectedProduct.details.weight }}</p>
+      <p *ngIf="selectedProduct.details.type">Type: {{ selectedProduct.details.type }}</p>
+      <p *ngIf="selectedProduct.details.storage">Storage: {{ selectedProduct.details.storage }}</p>
+      <p *ngIf="selectedProduct.details.color">Color: {{ selectedProduct.details.color }}</p>
+      <p *ngIf="selectedProduct.details.offers">Offers: {{ selectedProduct.details.offers }}</p>
+      <p *ngIf="selectedProduct.details.specifications">Specifications: {{ selectedProduct.details.specifications }}</p>
+      <p *ngIf="selectedProduct.details.features">Features: {{ selectedProduct.details.features }}</p>
+      <p *ngIf="selectedProduct.details.dosage">Dosage: {{ selectedProduct.details.dosage }}</p>
+      <p *ngIf="selectedProduct.details.uses">Uses: {{ selectedProduct.details.uses }}</p>
+      <p *ngIf="selectedProduct.details.sideEffects">Side Effects: {{ selectedProduct.details.sideEffects }}</p>
+    
+      <!-- Quantity Selector -->
+      <div class="quantity-container">
+        <label for="quantity">Quantity: </label>
+        <input type="number" id="quantity" [(ngModel)]="quantity" min="1" max="100" />
+      </div>
+    
+      
+    
+      <button (click)="orderProduct(selectedProduct)">Order Now</button>
+      <button (click)="closeProductDetails()">Close</button>
+    </div>
+    
+    <!-- Back Button -->
+    <div *ngIf="selectedProduct || selectedCategory" class="back-button-container">
+      <button (click)="goBack()" class="back-btn">Back</button>
+    </div>
+    
+    </body>
+    

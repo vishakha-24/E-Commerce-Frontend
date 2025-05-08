@@ -1,0 +1,16 @@
+
+ 
+ <div class="happy-clients-container">
+    <h2>Our Happy Clients</h2>
+    <div class="testimonials">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        
+        <h3>{{ testimonial.name }}</h3>
+        <p>{{ testimonial.feedback }}</p>
+        <div class="stars">
+          <span *ngFor="let star of getStars(testimonial.rating)">&#9733;</span>
+          <span *ngFor="let _ of getStars(5 - testimonial.rating)" class="empty-star">&#9734;</span>
+        </div>
+      </div>
+    </div>
+  </div>

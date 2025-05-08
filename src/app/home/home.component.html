@@ -1,0 +1,98 @@
+<nav class="navbar">
+  <div class="logo">E-Commerce Website</div>
+  <ul class="nav-links">
+    <li> <a [routerLink]="['/home']">Home</a></li>
+    <!-- <li><a [routerLink]="['/categories-list']">Categories</a></li> -->
+    <li><a [routerLink]="['/orders']">My Orders</a></li>
+    <li><a [routerLink]="['/account']">Account</a></li>
+    <li><a [routerLink]="['/sell']">Sell On Website</a></li>
+    <li><a [routerLink]="['/contact-us']">Contact Us</a></li>
+    <li><a [routerLink]="['/aboutus']">About Us</a></li>
+    
+  </ul>
+</nav>
+
+<!-- Rotator Section -->
+<div class="rotator">
+  <h2>Shop by Categories</h2>
+  <div class="category-container">
+    <div class="category-card" > 
+      
+      <img src="https://cdn.pixabay.com/photo/2022/08/01/07/59/vegetables-7357585_640.png" width="100" height="50" alt="Grocery" class="category-icon">
+      <span><h4 [routerLink]="['/grocery']">Grocery</h4></span>
+    </div>
+    <div class="category-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ6jYTiGygKqLef3s6KCACNwfCLJ7sPx2wXA&s" alt="Mobiles" class="category-icon">
+      <span><h4 [routerLink]="['/mobile']">Mobiles</h4></span>
+    </div>
+    <div class="category-card">
+      <img src="https://w7.pngwing.com/pngs/521/484/png-transparent-girl-shopping-bags-fashion-girl-thumbnail.png" alt="Fashion" class="category-icon">
+      <span><h4 [routerLink]="['/fashion']">Fashions</h4></span>
+    </div>
+    <div class="category-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMnXU2Ae_g3pjhJpZ-A4DMSOdSpfuAdh9PiQ&s" alt="Electronics" class="category-icon">
+      <span><h4 [routerLink]="['/electronics']">Electronics</h4></span>
+    </div>
+    <div class="category-card">
+      <img src="https://static.vecteezy.com/system/resources/previews/047/308/664/non_2x/red-kitchen-appliances-on-a-white-background-free-png.png" alt="Home Appliances" class="category-icon">
+      <span><h4 [routerLink]="['/homeappliences']">HomeAppliences</h4></span>
+    </div>
+    <div class="category-card">
+      <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/300528252/SM/MC/BU/2707807/living-room-sofa-chair-500x500.jpg" alt="Furniture" class="category-icon">
+      <span><h4 [routerLink]="['/furniture']">Furnitures</h4></span>
+    </div>
+  </div>
+</div>
+
+<div class="carousel">
+  <div class="slides">
+      <img src="https://as1.ftcdn.net/v2/jpg/04/75/43/76/1000_F_475437615_9wyPgTteuaIXREeq3RFqu9Qae1sHB3lI.jpg" alt="Slide 1">
+      <img src="https://t4.ftcdn.net/jpg/02/49/50/15/360_F_249501541_XmWdfAfUbWAvGxBwAM0ba2aYT36ntlpH.jpg" alt="Slide 2">
+      <img src="https://img.pikbest.com/origin/10/01/82/867pIkbEsTAIq.png!sw800" alt="Slide 3">
+      <img src="https://t4.ftcdn.net/jpg/06/22/74/79/240_F_622747997_4s5nw9y2WG3LJyQ5iRF4KRGLbySGRd82.jpg" alt="Slide 4">
+      <img src="https://as2.ftcdn.net/v2/jpg/09/75/89/17/1000_F_975891733_jTTgMlY6V6FwwPN2PWzph2XwJ7Lnxae3.jpg" alt="Slide 4">
+     
+  </div>
+</div>
+<app-happy></app-happy>
+<!-- Footer Section -->
+<footer class="footer">
+<div class="footer-sections">
+    <div class="footer-column">
+        <h3>About Us</h3>
+        <ul>
+            <li><a href="#">Company Info</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Releases</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Help</h3>
+        <ul>
+            <li><a href="#">Payments</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Cancellation & Returns</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Policy</h3>
+        <ul>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Connect</h3>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </div>
+</div>
+<div class="footer-bottom">
+    <p>&copy; 2024 E-Commerce Website. All rights reserved.</p>
+</div>
+
+</footer>

@@ -1,0 +1,117 @@
+<nav class="navbar">
+  <div class="logo">E-Commerce Website</div>
+  <ul class="nav-links">
+    <li> <a [routerLink]="['/home']">Home</a></li>
+    <!-- <li><a [routerLink]="['/categories-list']">Categories</a></li> -->
+    <li><a [routerLink]="['/orders']">My Orders</a></li>
+    <li><a [routerLink]="['/account']">Account</a></li>
+    <li><a [routerLink]="['/sell']">Sell On Website</a></li>
+    <li><a [routerLink]="['/contact-us']">Contact Us</a></li>
+    <li><a [routerLink]="['/aboutus']">About Us</a></li>
+    
+  </ul>
+</nav>
+
+
+<div class="container my-5">
+  <div class="order-form bg-light p-4 rounded shadow-lg">
+    <h2 class="text-center text-primary">Place Your Order</h2>
+    <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)" class="mt-4">
+      <!-- Name Field -->
+      <div class="form-group mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="order.name"
+          name="name"
+          class="form-control"
+          placeholder="Enter your full name"
+          required
+        />
+      </div>
+
+      <!-- Mobile Number Field -->
+      <div class="form-group mb-3">
+        <label for="mobile" class="form-label">Your Mobile Number</label>
+        <input
+          type="tel"
+          id="mobile"
+          [(ngModel)]="order.mobile"
+          name="mobile"
+          class="form-control"
+          placeholder="Enter your mobile number"
+          required
+        />
+      </div>
+
+      <!-- Address Field -->
+      <div class="form-group mb-3">
+        <label for="address" class="form-label">Your Address</label>
+        <textarea
+          id="address"
+          [(ngModel)]="order.address"
+          name="address"
+          class="form-control"
+          placeholder="Enter your address"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Payment Method Field -->
+      <div class="form-group mb-4">
+        <label class="form-label">Payment Method</label>
+        <div class="form-check">
+          <input
+            type="radio"
+            id="cashOnDelivery"
+            [(ngModel)]="order.paymentMethod"
+            name="paymentMethod"
+            value="Cash on Delivery"
+            class="form-check-input"
+            required
+          />
+          <label for="cashOnDelivery" class="form-check-label">Cash on Delivery</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            id="netBanking"
+            [(ngModel)]="order.paymentMethod"
+            name="paymentMethod"
+            value="Net Banking"
+            class="form-check-input"
+          />
+          <label for="netBanking" class="form-check-label">Net Banking</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            id="qrCode"
+            [(ngModel)]="order.paymentMethod"
+            name="paymentMethod"
+            value="Through QR Code"
+            class="form-check-input"
+          />
+          <label for="qrCode" class="form-check-label">Through QR Code</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            id="upi"
+            [(ngModel)]="order.paymentMethod"
+            name="paymentMethod"
+            value="UPI Payment"
+            class="form-check-input"
+          />
+          <label for="upi" class="form-check-label">UPI Payment</label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100">Place Order</button>
+    </form>
+  </div>
+</div>
+

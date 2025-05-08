@@ -1,0 +1,77 @@
+<nav class="navbar">
+  <div class="logo">E-Commerce Website</div>
+  <ul class="nav-links">
+    <li> <a [routerLink]="['/home']">Home</a></li>
+    <!-- <li><a [routerLink]="['/categories-list']">Categories</a></li> -->
+    <li><a [routerLink]="['/orders']">My Orders</a></li>
+    <li><a [routerLink]="['/account']">Account</a></li>
+    <li><a [routerLink]="['/sell']">Sell On Website</a></li>
+    <li><a [routerLink]="['/contact-us']">Contact Us</a></li>
+    <li><a [routerLink]="['/aboutus']">About Us</a></li>
+    
+  </ul>
+</nav>
+<body>
+
+  <h1>My Orders</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Order ID</th>
+        <th>Your Name</th>
+      <th>Your Mobile Number</th>
+      <th>Your Address</th>
+        <th>Total Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>ORD-001</td>
+        <td>Vishaka Jadhav</td>
+        <td>9845638887</td>
+        <td>Pune</td>
+        <td>₹15,000</td>
+        <td><span class="status delivered">Delivered</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>ORD-0002</td>
+        <td>Sahil Matha</td>
+        <td>8976437689</td>
+        <td>Mumbai</td>
+        <td>₹50,000</td>
+        <td><span class="status processing">Processing</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ORD-0003</td>
+        <td>Vrushali Bagal</td>
+        <td>8665893489</td>
+        <td>Aurangabad</td>
+        <td>₹3,000</td>
+        <td><span class="status pending">Pending</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>ORD-0004</td>
+        <td>Bhuvanesh Patil</td>
+        <td>9086457805</td>
+        <td>Solapur</td>
+        <td>₹4,500</td>
+        <td><span class="status delivered">Delivered</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>ORD-0005</td>
+        <td>Siddhi Khalate</td>
+        <td>7567980985</td>
+        <td>pune</td>
+        <td>₹1,200</td>
+        <td><span class="status processing">Processing</span></td>
+      </tr>
+    </tbody>
+  </table>
+</body>

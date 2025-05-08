@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <div class="logo">E-Commerce Website</div>
+  <ul class="nav-links">
+    <li> <a [routerLink]="['/home']">Home</a></li>
+    <!-- <li><a [routerLink]="['/categories-list']">Categories</a></li> -->
+    <li><a [routerLink]="['/orders']">My Orders</a></li>
+    <li><a [routerLink]="['/account']">Account</a></li>
+    <li><a [routerLink]="['/sell']">Sell On Website</a></li>
+    <li><a [routerLink]="['/contact-us']">Contact Us</a></li>
+    <li><a [routerLink]="['/aboutus']">About Us</a></li>
+    <!-- <li><a [routerLink]="['/happy']">Happy Clients</a></li> -->
+  </ul>
+</nav>
+
+<div class="account-container">
+  <h1>Account Details</h1>
+  <div class="card-container">
+    <div class="card" *ngFor="let user of users">
+      <img [src]="user.profilePicture" [alt]="user.name" class="profile-picture">
+      <h2>{{ user.name }}</h2>
+      <p><strong>Mobile:</strong> {{ user.mobile }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Address:</strong> {{ user.address }}</p>
+    </div>
+  </div>
+</div>

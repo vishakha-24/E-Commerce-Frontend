@@ -1,0 +1,133 @@
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  padding: 15px 25px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.navbar .nav-links a:hover {
+  background-color: #fff;
+  color: #0078d7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #e1dcd9, #2464e4);            
+
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.card img {
+  height: 350px;
+  width: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85); /* Darker black background */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100%); /* Start hidden at the bottom */
+  transition: transform 0.5s ease, background0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.2);
+}
+
+.card:hover .card-overlay {
+  transform: translateY(0);
+}
+
+.card-overlay h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-overlay p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.card-overlay a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 15px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #444;
+}
+
+.card-overlay a:hover {
+  background-color: #666;
+}
+
